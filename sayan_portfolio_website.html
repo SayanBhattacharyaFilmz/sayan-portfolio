@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sayan Bhattacharya | Director Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Montserrat,sans-serif;background:#0b0b0b;color:white;overflow-x:hidden}
+
+/* Intro Animation */
+#intro{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+background:#000;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:5000;
+animation:introFade 4s forwards
+}
+
+#intro h1{
+font-size:42px;
+letter-spacing:6px;
+font-weight:800;
+animation:logoReveal 2.5s ease
+}
+
+#intro p{
+margin-top:10px;
+opacity:.7;
+letter-spacing:3px;
+animation:fadeIn 2s ease
+}
+
+@keyframes logoReveal{
+0%{opacity:0;transform:scale(.8)}
+60%{opacity:1;transform:scale(1.1)}
+100%{transform:scale(1)}
+}
+
+@keyframes fadeIn{
+from{opacity:0}
+to{opacity:.7}
+}
+
+@keyframes introFade{
+0%{opacity:1}
+80%{opacity:1}
+100%{opacity:0;visibility:hidden}
+}
+
+header{position:fixed;top:0;width:100%;background:linear-gradient(to bottom,rgba(0,0,0,.9),transparent);padding:20px 8%;z-index:1000}
+nav{display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:800;font-size:20px;letter-spacing:2px}
+nav ul{display:flex;list-style:none;gap:30px}
+nav a{text-decoration:none;color:white;font-size:14px;opacity:.85}
+nav a:hover{opacity:1}
+
+.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;padding:0 8%;background:linear-gradient(to top,#0b0b0b,transparent),url("https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=2000");background-size:cover;background-position:center}
+.hero h1{font-size:64px;font-weight:800;max-width:700px;animation:fadeUp 1.2s ease}
+.hero p{margin-top:15px;max-width:500px;opacity:.9;line-height:1.6;animation:fadeUp 1.5s ease}
+.hero-buttons{margin-top:25px;display:flex;gap:15px;animation:fadeUp 1.8s ease}
+
+.btn{padding:12px 26px;border:none;cursor:pointer;font-weight:600;border-radius:4px}
+.btn-primary{background:#e50914;color:white}
+.btn-secondary{background:rgba(255,255,255,.2);color:white}
+
+section{padding:90px 8%}
+.section-title{font-size:26px;margin-bottom:25px}
+
+.row{display:flex;gap:18px;overflow-x:auto;padding-bottom:10px}
+
+.poster{min-width:220px;height:320px;border-radius:8px;background-size:cover;background-position:center;position:relative;cursor:pointer;transition:.4s}
+.poster:hover{transform:scale(1.08)}
+.poster::after{content:"▶ Watch Trailer";position:absolute;bottom:0;left:0;right:0;padding:12px;background:linear-gradient(transparent,rgba(0,0,0,.9));font-size:14px;opacity:0;transition:.3s}
+.poster:hover::after{opacity:1}
+
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.project{background:#141414;border-radius:8px;overflow:hidden;transition:.3s}
+.project img{width:100%;height:300px;object-fit:cover}
+.project:hover{transform:scale(1.05)}
+.project-content{padding:18px}
+
+.about{max-width:900px;line-height:1.7;opacity:.9}
+
+.contact{max-width:600px}
+.contact p{margin:10px 0}
+
+.cv-btn{display:inline-block;margin-top:15px;background:#e50914;padding:10px 20px;text-decoration:none;color:white;border-radius:4px}
+
+footer{text-align:center;padding:30px;background:#000;margin-top:50px;font-size:14px;opacity:.7}
+
+.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);display:none;justify-content:center;align-items:center;z-index:2000}
+.modal iframe{width:80%;height:60%;border:none}
+.close{position:absolute;top:40px;right:60px;font-size:28px;cursor:pointer}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:768px){.hero h1{font-size:40px}.poster{min-width:160px;height:240px}.modal iframe{width:95%;height:50%}}
+</style>
+</head>
+
+<body>
+
+<div id="intro">
+<h1>SAYAN BHATTACHARYA</h1>
+<p>FILMMAKER</p>
+</div>
+
+<header>
+<nav>
+<div class="logo">SAYAN BHATTACHARYA</div>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#portfolio">Films</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<h1>Filmmaker • Storyteller • Creator</h1>
+<p>Kolkata based filmmaker exploring cinematic storytelling, symbolism and experimental media narratives.</p>
+<div class="hero-buttons">
+<button class="btn btn-primary" onclick="document.getElementById('portfolio').scrollIntoView()">Watch Films</button>
+<button class="btn btn-secondary" onclick="document.getElementById('about').scrollIntoView()">About Director</button>
+</div>
+</section>
+
+<section id="portfolio">
+<h2 class="section-title">Films</h2>
+<div class="row">
+<div class="poster" style="background-image:url('https://images.unsplash.com/photo-1603204077779-bed963ea7dc3?q=80&w=800')" onclick="openTrailer('https://www.youtube.com/embed/8rbZ8uTWZUQ')"></div>
+<div class="poster" style="background-image:url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?q=80&w=800')" onclick="openTrailer('https://www.youtube.com/embed/jK1Ibk_zmI')"></div>
+<div class="poster" style="background-image:url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=800')" onclick="openTrailer('https://www.youtube.com/embed/8rbZ8uTWZUQ')"></div>
+</div>
+</section>
+
+<section id="projects">
+<h2 class="section-title">Current Projects</h2>
+<div class="projects-grid">
+<div class="project">
+<img src="https://images.unsplash.com/photo-1517602302552-471fe67acf66?q=80&w=800">
+<div class="project-content">
+<h3>Audio Story Project</h3>
+<p>Immersive audio storytelling set in Kolkata with cinematic sound design.</p>
+</div>
+</div>
+<div class="project">
+<img src="https://images.unsplash.com/photo-1505685296765-3a2736de412f?q=80&w=800">
+<div class="project-content">
+<h3>Short Film Concept</h3>
+<p>Exploring modern relationships and media control through symbolism.</p>
+</div>
+</div>
+<div class="project">
+<img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=800">
+<div class="project-content">
+<h3>Visual Experiment</h3>
+<p>Experimental narrative exploring silence, sound and visual metaphors.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="about">
+<h2 class="section-title">About the Director</h2>
+<p class="about">Sayan Bhattacharya is a Kolkata based filmmaker and digital creator focused on cinematic storytelling and visual experimentation. His work blends symbolism, sound design and narrative emotion to create immersive digital stories.</p>
+</section>
+
+<section id="contact">
+<h2 class="section-title">Contact</h2>
+<div class="contact">
+<p>Email: meetsayan58@gmail.com</p>
+<p>Phone: 6290387034</p>
+<p>Location: Kolkata, India</p>
+<a class="cv-btn" href="#">Download CV</a>
+</div>
+</section>
+
+<footer>© 2026 Sayan Bhattacharya | Director Portfolio</footer>
+
+<div class="modal" id="trailerModal">
+<div class="close" onclick="closeTrailer()">✕</div>
+<iframe id="trailerFrame" src="" allowfullscreen></iframe>
+</div>
+
+<script>
+function openTrailer(link){
+const modal=document.getElementById('trailerModal')
+const frame=document.getElementById('trailerFrame')
+frame.src=link+"?autoplay=1"
+modal.style.display='flex'
+}
+
+function closeTrailer(){
+const modal=document.getElementById('trailerModal')
+const frame=document.getElementById('trailerFrame')
+modal.style.display='none'
+frame.src=""
+}
+</script>
+
+</body>
+</html>
